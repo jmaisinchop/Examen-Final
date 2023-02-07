@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
       const res = await this.authSvc.loginGoogle();
       console.log(res)
       if (res == true) {
-        this.router.navigate(['/inicio-c'])
+        this.router.navigate(['/filtros'])
       }
       console.log(res)
     } catch (error) {
@@ -40,7 +40,7 @@ export class LoginPage implements OnInit {
     const user = await this.authSvc.login(this.user);
     if (user) {
       this.mostrarMensaje('Ingresado Correctamente')
-      this.router.navigateByUrl('/inicio')
+      this.router.navigateByUrl('/libro')
       localStorage.setItem("login", "true")
       localStorage.setItem("email", "" + user.user?.email)
       localStorage.setItem("password", password)

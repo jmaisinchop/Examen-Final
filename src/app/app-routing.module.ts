@@ -16,14 +16,8 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
-  {
-    path: 'inicio',
-    loadChildren: () => import('./admin/inicio/inicio.module').then( m => m.InicioPageModule)
-  },
-  {
-    path: 'inicio-c',
-    loadChildren: () => import('./cliente/inicio-c/inicio-c.module').then( m => m.InicioCPageModule)
-  },
+
+
   {
     path: 'libro',
     loadChildren: () => import('./admin/libro/libro.module').then( m => m.LibroPageModule)
@@ -47,6 +41,22 @@ const routes: Routes = [
   {
     path: 'listar',
     loadChildren: () => import('./admin/listar/listar.module').then( m => m.ListarPageModule)
+  },
+  {
+    path: 'filtros',
+    loadChildren: () => import('./cliente/filtros/filtros.module').then( m => m.FiltrosPageModule)
+  },
+  {
+    path: 'reservados',
+    loadChildren: () => import('./cliente/reservados/reservados.module').then( m => m.ReservadosPageModule)
+  },
+  {
+    path: 'reservar',
+    loadChildren: () => import('./cliente/reservar/reservar.module').then( m => m.ReservarPageModule)
+  },
+  {
+    path: 'tab1',
+    loadChildren: () => import('./tab1/tab1.module').then( m => m.Tab1PageModule)
   },
  
 ];

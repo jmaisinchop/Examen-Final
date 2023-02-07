@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarSesionGmail()">
+        <ion-icon name="log-out-sharp"></ion-icon>
+       
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Libros</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+<ion-button color="success" routerLink="/reservados">
+  <ion-icon name="book-sharp"></ion-icon>
+  Reservados
+</ion-button>
+<ion-content class="ion-padding">
+
+  <div class="fondo">
+    <ion-searchbar [debounce]="1000" (ionChange)="buscar($event)"></ion-searchbar>
+
+    <ion-card *ngFor="let libro of libros1" class="user-list">
+
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">{{libro.titulo}}</ion-card-title>
+      </ion-card-header>
+
+      <img class="avatar" src="{{libro.foto}}" style="  height: 70vh !important;
+      width: auto !important;
+      align-items: center;">
+      <ion-card-content>
+
+        <ion-card-subtitle><b>Codigo ISBN: </b>{{libro.codigoISBN}}</ion-card-subtitle>
+        <ion-card-subtitle><b>Autor: </b>{{libro.autor}}</ion-card-subtitle>
+        <ion-card-subtitle><b>Editorial: </b>{{libro.editorial}}</ion-card-subtitle>
+        <ion-card-subtitle><b>Categoria: </b>{{libro.categoria}}</ion-card-subtitle>
+        <ion-card-subtitle><b>Cantidad: </b>{{libro.Cantidad}}</ion-card-subtitle>
+
+      </ion-card-content>
+
+      <ion-footer>
+
+
+
+
+        <ion-button color="success" shape="round" type="submit" expand="full" (click)="Reservar(libro.id)">
+          Reservar</ion-button>
+      </ion-footer>
+
+    </ion-card>
+  </div>
+
+</ion-content>

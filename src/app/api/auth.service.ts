@@ -19,7 +19,10 @@ export class AuthService {
     try {
 
       const res = this.afAuth.signInWithPopup(new GoogleAuthProvider);
-     console.log('hola'+(await res).user?.uid)
+      localStorage.setItem('idC',''+(await res).user?.uid)
+      localStorage.setItem('nombreC',''+(await res).user?.displayName)
+      localStorage.setItem('Fotho',''+(await res).user?.photoURL)
+      localStorage.setItem('EmailC',''+(await res).user?.email)
      if((await res).user?.uid!=''){
         return true
      }else{

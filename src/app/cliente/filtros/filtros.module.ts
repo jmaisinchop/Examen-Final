@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { InicioCPageRoutingModule } from './inicio-c-routing.module';
+import { FiltrosPageRoutingModule } from './filtros-routing.module';
 
-import { InicioCPage } from './inicio-c.page';
+import { FiltrosPage } from './filtros.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioCPageRoutingModule
+    FiltrosPageRoutingModule
   ],
-  declarations: [InicioCPage]
+  declarations: [FiltrosPage]
 })
-export class InicioCPageModule {}
+export class FiltrosPageModule {}
