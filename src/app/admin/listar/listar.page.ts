@@ -6,12 +6,11 @@ import { LibrosService } from 'src/app/api/libros.service';
 import { Libro } from 'src/app/entidades';
 
 @Component({
-  selector: 'app-nodisponible',
-  templateUrl: './nodisponible.page.html',
-  styleUrls: ['./nodisponible.page.scss'],
+  selector: 'app-listar',
+  templateUrl: './listar.page.html',
+  styleUrls: ['./listar.page.scss'],
 })
-export class NodisponiblePage implements OnInit {
-
+export class ListarPage implements OnInit {
   libros: Libro[]=[]
   libros1:any=[]
   handlerMessage = '';
@@ -42,7 +41,7 @@ export class NodisponiblePage implements OnInit {
     console.log(this.libros);
     this.libros1=[]
     for (let index = 0; index <this.libros?.length; index++) {
-     if(this.libros[index].Cantidad==0){
+     if(this.libros[index].Cantidad>0){
        
        
         this.libros1.push(this.libros[index])
@@ -57,12 +56,8 @@ export class NodisponiblePage implements OnInit {
 }
 actualizar(id:string){
   localStorage.setItem("idl", id)
-  this.router.navigate(['/update-libro']);
+  this.router.navigate(['/actualizar-libro']);
 
-}
-VerCliente(id:string){
-  localStorage.setItem("idp", id)
-  this.router.navigate(['/listar-clientes']);
 }
 async delete(id: string) {
   const alert = await this.alertController.create({
@@ -89,4 +84,6 @@ async delete(id: string) {
 
   await alert.present();
 }
+
+
 }

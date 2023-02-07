@@ -44,6 +44,10 @@ const routes: Routes = [
     path: 'nodisponible',
     loadChildren: () => import('./admin/nodisponible/nodisponible.module').then( m => m.NodisponiblePageModule)
   },
+  {
+    path: 'listar',
+    loadChildren: () => import('./admin/listar/listar.module').then( m => m.ListarPageModule)
+  },
  
 ];
 
