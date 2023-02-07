@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <ion-title>Registrar Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -18,7 +18,7 @@
     
     <ion-input  class="user"placeholder="Ingrese su password" type="password" [(ngModel)]="user.password" requeried></ion-input>
   </ion-label>
-    <ion-button type="submit" shape="round" expand="block" (click)="register(user.password)">
+    <ion-button type="submit" color="success" shape="round" expand="block" (click)="register(user.password)">
       Registrarse
     </ion-button>
 

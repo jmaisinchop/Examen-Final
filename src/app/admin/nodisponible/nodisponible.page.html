@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <ion-title>No Disponibles</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button color="dark" menu="main-menu1"></ion-menu-button>
@@ -19,7 +19,9 @@
             <ion-card-title class="ion-text-center" >{{libro.titulo}}</ion-card-title>
           </ion-card-header>
           
-            <img class="avatar" src="{{libro.foto}}">
+            <img class="avatar" src="{{libro.foto}}" style="  height: 70vh !important;
+            width: auto !important;
+            align-items: center;">
           <ion-card-content>  
         
             <ion-card-subtitle><b>Codigo ISBN: </b>{{libro.codigoISBN}}</ion-card-subtitle>
